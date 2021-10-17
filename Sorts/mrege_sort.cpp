@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void meregeSort(int array, int left, int right){
+void meregeSort(int *array, int left, int right){
     //finding our middle index
     int middle;
     //in this if we will sort our left and right array
