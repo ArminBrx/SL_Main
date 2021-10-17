@@ -2,70 +2,60 @@
 using namespace std;
 
 // now creating new function (mergeit)
-void mergeit(int *array, int left, int middle, int right){
-    int i, j, k, nl, nr;
+void mergeit(int *array, int left, int middle, int right) {
+   int i, j, k, nl, nr;
     //cout << "im here" ;
 //<<<<<<< HEAD
     //finding our 2 sub arrays length
-    nl = (middle - left) + 1;
-    nr = right - middle;
-   // cout << "test it "<<nl << nr << "booo" ;
-    int larr[nl], rarr[nr];
-//=======
+   nl = middle - left+1;
+   nr = right - middle;
+   int larr[nl], rarr[nr];
     //read for main array and put it in 2 sub array (dev branch)
-    for (i = 0 ; i < nl ; i++){
-        //cout << i ;
-        larr[i] = array[left+i];
+    for(i = 0; i<nl; i++){
+      larr[i] = array[left+i];
+   for(j = 0; j<nr; j++)
+      rarr[j] = array[middle+1+j];
     }
-    for(j = 0 ; j < nr ; j++){
-        //cout << "22" ;
-        rarr[j] = array[middle+1+j];
-    }
-    //cout<< nl << nr ;
-    i = 0 ; j = 0; k = 1 ; 
-    //cout<< i << j ;
+   i = 0; j = 0; k = left;
     //continue from master branch here and merging arrays
-    while( i < nl && j < nr){
-        if(larr[i] <= rarr[j]) {
-            array[k] = larr[i];
-            i++;
-            //cout <<"44";
-        }else{
-            array[k] = rarr[j];
-            j++;
-        }
-        k++;
-       // cout << "im here 2 " ;
-    }
-//>>>>>>> dev
+     while(i < nl && j<nr) {
+      if(larr[i] <= rarr[j]) {
+         array[k] = larr[i];
+         i++;
+      }else{
+         array[k] = rarr[j];
+         j++;
+      }
+      k++;
+   }
     // wrong commit from dev xD now master branch
     //make sure they are okay ? :D
-    while(i < nl){
-        array[k] = larr[i];
-        i++;
-        k++;
-    }
-    while(j < nr){
-        array[k] = rarr[j];
-        j++;
-        k++;
-    }
+    while(i<nl) {       //extra element in left array
+      array[k] = larr[i];
+      i++; 
+      k++;
+   }
+   while(j<nr) {     //extra element in right array
+      array[k] = rarr[j];
+      j++;
+       k++;
+   }
 }
 
 
-void mergeSort(int *array, int left, int right){
+void mergeSort(int *array, int l, int r){
     //finding our middle index
-    int middle;
+    int m;
     
     //in this if we will sort our left and right array
-    if(left < right){
-        int middle = left + (right-left)/2;
+    if(l < r){
+        int m = l + (r-l)/2;
         //cout<< " im here";
         //these two are doing recursive function until they are sorted
-        mergeSort(array, left, middle);
-        mergeSort(array, middle+1, right);
+        mergeSort(array, l, m);
+        mergeSort(array, m+1, r);
         //this is new function for sorting our left and right array
-        mergeit(array, left, middle, right);
+        mergeit(array, l, m, r);
     }
 }
 
@@ -84,6 +74,7 @@ int main(){
     // sending our array to merege function
     mergeSort(arr, 0, n-1);
     // show our inputs 
+    cout << "Finally : " << endl;
     for(int i = 0 ; i < n ; i++){
         cout << arr[i] << " " ;
     }
