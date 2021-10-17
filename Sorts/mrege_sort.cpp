@@ -22,6 +22,18 @@ void meregeit(int *array, int left, int middle, int right){
         rightarr[j] = array[middle+j];
     }
     i,j = 0;
+    //continue from master branch here and merging arrays
+    while( i < nleft && j < nright){
+        if(leftarr[i <= rightarr[j]){
+            array[flag] = leftarr[i];
+            i++;
+        }
+        else{
+            array[flag] = rightarr[j];
+            j++;
+        }
+        flag++;
+    }
 >>>>>>> dev
 }
 
