@@ -4,9 +4,25 @@ using namespace std;
 // now creating new function (mergeit)
 void meregeit(int *array, int left, int middle, int right){
     int i, j, flag, nleft, nright;
+<<<<<<< HEAD
     //finding our 2 sub arrays length
     nleft = (middle - left) + 1;
     nright = right - middle;
+=======
+    flag = 1 ;
+    //finding our 2 sub arrays length
+    nleft = (middle - left) + 1;
+    nright = right - middle;
+    int leftarr[nleft], rightarr[nright];
+    //read for main array and put it in 2 sub array (dev branch)
+    for (i = 0 ; i < nleft ; i++){
+        leftarr[i] = array[left+i];
+    }
+    for(j = 0 ; j < nright ; j++){
+        rightarr[j] = array[middle+j];
+    }
+    i,j = 0;
+>>>>>>> dev
 }
 
 void meregeSort(int *array, int left, int right){
