@@ -4,11 +4,11 @@ using namespace std;
 // now creating new function (mergeit)
 void meregeit(int *array, int left, int middle, int right){
     int i, j, flag, nleft, nright;
-<<<<<<< HEAD
+//<<<<<<< HEAD
     //finding our 2 sub arrays length
     nleft = (middle - left) + 1;
     nright = right - middle;
-=======
+//=======
     flag = 1 ;
     //finding our 2 sub arrays length
     nleft = (middle - left) + 1;
@@ -24,7 +24,7 @@ void meregeit(int *array, int left, int middle, int right){
     i,j = 0;
     //continue from master branch here and merging arrays
     while( i < nleft && j < nright){
-        if(leftarr[i <= rightarr[j]){
+        if(leftarr[i] <= rightarr[j] ) {
             array[flag] = leftarr[i];
             i++;
         }
@@ -34,7 +34,7 @@ void meregeit(int *array, int left, int middle, int right){
         }
         flag++;
     }
->>>>>>> dev
+//>>>>>>> dev
     // wrong commit from dev xD now master branch
     //make sure they are okay ? :D
     while(i < nleft){
@@ -74,10 +74,11 @@ int main(){
     for(int i = 0; i < n ; i++){
         cin >> arr[i] ;
     }
-    /* show our inputs - test 
-    for(int i = 0 ; i < n ; i++){
-        cout << arr[i] << " " ;
-    } */
+
     // sending our array to merege function
     meregeSort(arr, 0, n-1);
+    // show our inputs 
+    for(int i = 0 ; i < n ; i++){
+        cout << arr[i] << " " ;
+    }
 }
