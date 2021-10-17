@@ -1,11 +1,14 @@
 #include <iostream>
 using namespace std;
-
+//out put function
+void output(int *array, int n){
+    for(int i = 0 ; i < n ; i++){
+        cout << array[i] << " " ;
+    }
+}
 // now creating new function (mergeit)
 void mergeit(int *array, int left, int middle, int right) {
    int i, j, k, nl, nr;
-    //cout << "im here" ;
-//<<<<<<< HEAD
     //finding our 2 sub arrays length
    nl = middle - left+1;
    nr = right - middle;
@@ -47,10 +50,9 @@ void mergeSort(int *array, int l, int r){
     //finding our middle index
     int m;
     
-    //in this if we will sort our left and right array
+    //in this "if" we will sort our left and right array
     if(l < r){
         int m = l + (r-l)/2;
-        //cout<< " im here";
         //these two are doing recursive function until they are sorted
         mergeSort(array, l, m);
         mergeSort(array, m+1, r);
@@ -74,8 +76,6 @@ int main(){
     // sending our array to merege function
     mergeSort(arr, 0, n-1);
     // show our inputs 
-    cout << "Finally : " << endl;
-    for(int i = 0 ; i < n ; i++){
-        cout << arr[i] << " " ;
-    }
+    // make my int main cleaner
+    output(arr , n);
 }
