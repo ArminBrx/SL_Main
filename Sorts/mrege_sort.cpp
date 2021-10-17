@@ -1,6 +1,14 @@
 #include <iostream>
 using namespace std;
 
+// now creating new function (mergeit)
+void meregeit(int *array, int left, int middle, int right){
+    int i, j, flag, nleft, nright;
+    //finding our 2 sub arrays length
+    nleft = (middle - left) + 1;
+    nright = right - middle;
+}
+
 void meregeSort(int *array, int left, int right){
     //finding our middle index
     int middle;
@@ -10,7 +18,7 @@ void meregeSort(int *array, int left, int right){
         meregeSort(array, left, right);
         meregeSort(array, middle+1, right);
         //this is new function for sorting our left and right array
-        //meregeit(array, left, middle, right);
+        meregeit(array, left, middle, right);
     }
 }
 
