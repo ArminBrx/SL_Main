@@ -35,7 +35,20 @@ void meregeit(int *array, int left, int middle, int right){
         flag++;
     }
 >>>>>>> dev
+    // wrong commit from dev xD now master branch
+    //make sure they are okay ? :D
+    while(i < nleft){
+        array[flag] = leftarr[i];
+        i++;
+        flag++;
+    }
+    while(j < nleft){
+        array[flag] = rightarr[j];
+        j++;
+        flag++;
+    }
 }
+
 
 void meregeSort(int *array, int left, int right){
     //finding our middle index
